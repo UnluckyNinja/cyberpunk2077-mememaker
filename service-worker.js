@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.113314f78ce03e01e062b71ad8775316.js"
+  "/cyberpunk2077-mememaker/precache-manifest.d02477902c7c6728b42503bbbd2a2f2a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "cyberpunk2077-mememaker"});
