@@ -2,7 +2,7 @@
   <div
     class="maker"
     v-loading.fullscreen="processing"
-    element-loading-text="沙雕炼成中"
+    :element-loading-text="$t('steps.processing')"
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     element-loading-customClass="loading-overlay"
@@ -14,8 +14,13 @@
         @click="previous"
         :loading="processing"
         :disabled="currentStep <= 0"
-      >上一步</el-button>
-      <el-button type="primary" @click="next" :loading="processing" :disabled="currentStep >= 2">下一步</el-button>
+      >{{$t('steps.button.previous')}}</el-button>
+      <el-button
+        type="primary"
+        @click="next"
+        :loading="processing"
+        :disabled="currentStep >= 2 || !this.image"
+      >{{$t('steps.button.next')}}</el-button>
     </div>
     <!-- <transition name="editor-transition"> -->
     <!-- file chooser -->
@@ -40,16 +45,18 @@
         fit="contain"
       ></el-image>
       <div></div>
-      <a :href="outputImage" download>
-        <el-button type="success">保存图片</el-button>
-      </a>
+      <div>
+        <a style="height" :href="outputImage" download>
+          <el-button type="success">{{$t('steps.button.save')}}</el-button>
+        </a>
+      </div>
     </div>
     <!-- </transition> -->
     <!-- eleme steps -->
     <el-steps class="step" :active="currentStep" finish-status="success" align-center>
-      <el-step title="选择图片"></el-step>
-      <el-step title="沙雕炼成"></el-step>
-      <el-step title="复制图片"></el-step>
+      <el-step :title="$t('steps.step1')"></el-step>
+      <el-step :title="$t('steps.step2')"></el-step>
+      <el-step :title="$t('steps.step3')"></el-step>
     </el-steps>
   </div>
 </template>
@@ -72,7 +79,7 @@ import KonvaEditor from './KonvaEditor.vue';
 })
 export default class MemeMaker extends Vue {
   private currentStep = 0;
-  private image = new Image();
+  private image: HTMLImageElement | null = null;
   private outputImage: string = '';
   private processing = false;
 

@@ -1,3 +1,21 @@
 {
-  "message": "hello i18n !!"
+  "app": {
+    "footer": "© 2019 UnluckyNinja",
+    "title": "赛博朋克2077 沙雕图生成器"
+  },
+  "steps": {
+    "button": {
+      "next": "下一步",
+      "previous": "上一步",
+      "save": "保存图片"
+    },
+    "processing": "图片生成中",
+    "step1": "选择图片",
+    "step2": "沙雕炼成",
+    "step3": "复制图片"
+  },
+  "upload": {
+    "click_here": "点击这里",
+    "description": "将文件拖到此处，或{click}{newline}你也可以复制图片，然后点击正文区域并粘贴（CTRL+V）"
+  }
 }

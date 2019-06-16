@@ -10,9 +10,10 @@
   >
     <i class="el-icon-upload"></i>
     <div class="el-upload__text">
-      将文件拖到此处，或
-      <em>点击上传</em>
-      <br>你也可以复制图片，然后点击正文区域并粘贴（CTRL+V）
+      <i18n path="upload.description" tag="p">
+        <em place="click">{{ $t('upload.click_here') }}</em>
+        <br place="newline">
+      </i18n>
     </div>
   </el-upload>
 </template>

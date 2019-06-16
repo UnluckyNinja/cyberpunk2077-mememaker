@@ -1,3 +1,21 @@
 {
-  "message": "hello i18n !!"
+  "app": {
+    "footer": "© 2019 UnluckyNinja",
+    "title": "Cyberpunk 2077 Meme Maker"
+  },
+  "steps": {
+    "button": {
+      "next": "Next >",
+      "previous": "< Prvev",
+      "save": "Save"
+    },
+    "processing": "Finalizing image",
+    "step1": "Choose a file",
+    "step2": "Edit",
+    "step3": "Save & Share"
+  },
+  "upload": {
+    "click_here": "Click Here",
+    "description": "Drag file into this area or {click}. {newline}You can also paste an image here (Ctrl-V)."
+  }
 }
