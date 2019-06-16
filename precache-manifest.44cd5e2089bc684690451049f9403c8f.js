@@ -8,11 +8,11 @@ self.__precacheManifest = [
     "url": "/cyberpunk2077-mememaker/js/chunk-vendors.315e270b.js"
   },
   {
-    "revision": "40dbd27fe5cc0a63ba41",
-    "url": "/cyberpunk2077-mememaker/js/app.8445019d.js"
+    "revision": "2fa4475260cccf479d39",
+    "url": "/cyberpunk2077-mememaker/js/app.e5914a7c.js"
   },
   {
-    "revision": "d4be0122669cb70fd9d61738da3a16bb",
+    "revision": "628859eaaa359df386329c4bd10f87a9",
     "url": "/cyberpunk2077-mememaker/index.html"
   },
   {
@@ -32,7 +32,7 @@ self.__precacheManifest = [
     "url": "/cyberpunk2077-mememaker/fonts/element-icons.535877f5.woff"
   },
   {
-    "revision": "40dbd27fe5cc0a63ba41",
-    "url": "/cyberpunk2077-mememaker/css/app.f9fe6e74.css"
+    "revision": "2fa4475260cccf479d39",
+    "url": "/cyberpunk2077-mememaker/css/app.a341ce44.css"
   }
 ];
