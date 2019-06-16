@@ -7,13 +7,12 @@
     :auto-upload="false"
     :show-file-list="true"
     :on-change="changeImage"
-     @paste="pasteImage"
   >
     <i class="el-icon-upload"></i>
     <div class="el-upload__text">
       将文件拖到此处，或
       <em>点击上传</em>
-      或在正文区域粘贴（CTRL+V）
+      <br>你也可以复制图片，然后点击正文区域并粘贴（CTRL+V）
     </div>
   </el-upload>
 </template>

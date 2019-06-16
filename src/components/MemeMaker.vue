@@ -6,6 +6,7 @@
     element-loading-spinner="el-icon-loading"
     element-loading-background="rgba(0, 0, 0, 0.8)"
     element-loading-customClass="loading-overlay"
+    @paste="onPaste"
   >
     <div class="flex-horizontal">
       <el-button
@@ -20,7 +21,7 @@
     <!-- file chooser -->
     <div class="mememaker filepicker vertical-center" v-show="currentStep === 0" key="0">
       <!-- v-if 保证上一步再次读取文件时自动刷新 -->
-      <FilePicker ref="file-picker" v-if="currentStep === 0" @image-load="imageLoad"></FilePicker>
+      <FilePicker ref="filePicker" v-if="currentStep === 0" @image-load="imageLoad"></FilePicker>
     </div>
     <!-- editor div -->
     <KonvaEditor
@@ -80,6 +81,10 @@ export default class MemeMaker extends Vue {
     if (newwin) {
       newwin.document.write(`<img src="${this.outputImage}"></img>`);
     }
+  }
+
+  public onPaste(e: ClipboardEvent) {
+    (this.$refs.filePicker as FilePicker).pasteImage(e);
   }
 
   public get editor() {
