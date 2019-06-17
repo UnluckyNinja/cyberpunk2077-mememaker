@@ -94,11 +94,11 @@ export default class App extends Vue {
     & > * {
       margin: 5px;
     }
-    border-bottom: 1px;
+    border-bottom: 1px groove;
     justify-content: flex-start;
   }
   .footer {
-    border-top: 1px;
+    border-top: 1px groove;
     .repo-link {
       
     }
