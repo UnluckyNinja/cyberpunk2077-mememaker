@@ -1,29 +1,16 @@
-# cyberpunk2077mememaker
+# 赛博朋克2077沙雕图生成器
 
-## Project setup
-```
-yarn install
-```
+## http://unluckyninja.github.io/cyberpunk2077-mememaker
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+代码写的太菜了暂时先不放源码出来丢人了
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+工具库：
+* [Typescript](https://www.typescriptlang.org/)
+* [Vue](https://vuejs.org/)
+* [Element-UI](https://element.eleme.io/)
+* [Konva](https://konvajs.org/)
+* [vue-konva](https://github.com/konvajs/vue-konva)
 
-### Run your tests
-```
-yarn run test
-```
+2077的LOGO图片来自 https://github.com/HeliumOctahelide/heliumoctahelide.github.io
 
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A.
