@@ -20,6 +20,7 @@
 <script lang="ts">
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator';
 import Konva from 'konva';
+import { Shape } from 'konva/types/Shape';
 
 @Component({
   components: {
@@ -51,9 +52,7 @@ export default class KonvaEditor extends Vue {
 
       this.clearTransform();
 
-      const tr = new Konva.Transformer();
-      this.logoLayer.add(tr as any);
-      tr.attachTo(e.target);
+      this.addTransformTo(e.target as Shape);
       this.logoLayer.draw();
     });
   }
@@ -94,7 +93,8 @@ export default class KonvaEditor extends Vue {
   public loadLogo(url: string) {
     const image = new Image();
     image.addEventListener('load', () => {
-      const ratio = this.stage.width() / this.stage.scaleX() * 0.8 / image.naturalWidth;
+      // decide the scale factor of logo, down to (fraction) of background's width
+      const ratio = this.stage.width() / this.stage.scaleX() * 0.9 / image.naturalWidth;
       const logo = new Konva.Image({
         name: 'logo',
         image,
@@ -105,6 +105,7 @@ export default class KonvaEditor extends Vue {
       logo.scale({ x: ratio, y: ratio });
       this.logoLayer.removeChildren();
       this.logoLayer.add(logo);
+      this.addTransformTo(logo);
       this.logoLayer.draw();
     });
     image.src = url;
@@ -114,6 +115,12 @@ export default class KonvaEditor extends Vue {
     this.stage.find('Transformer').each((it) => {
       it.destroy();
     });
+  }
+
+  public addTransformTo(shape: Shape) {
+      const tr = new Konva.Transformer();
+      shape.getLayer().add(tr);
+      tr.attachTo(shape);
   }
 
   public renderImage(): Promise<string> {
