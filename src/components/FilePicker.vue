@@ -1,5 +1,6 @@
 <template>
   <el-upload
+    class="uploader"
     drag
     action="nowhere"
     accept="image/*"
@@ -83,8 +84,9 @@ export default class FilePicker extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-  .content {
-  }
+
+.uploader {
+  
 }
+
 </style>

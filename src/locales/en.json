@@ -3,6 +3,9 @@
     "footer": "CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A. © 2019 UnluckyNinja",
     "title": "Cyberpunk 2077 Meme Maker"
   },
+  "editor": {
+    "logotip": "Choose logo type:"
+  },
   "steps": {
     "button": {
       "next": "Next >",

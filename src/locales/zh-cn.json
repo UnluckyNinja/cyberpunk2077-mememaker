@@ -3,6 +3,9 @@
     "footer": "CD PROJEKT®, Cyberpunk®, Cyberpunk 2077® are registered trademarks of CD PROJEKT S.A. © 2019 UnluckyNinja",
     "title": "赛博朋克2077 沙雕图生成器"
   },
+  "editor": {
+    "logotip": "选择LOGO类型："
+  },
   "steps": {
     "button": {
       "next": "下一步",

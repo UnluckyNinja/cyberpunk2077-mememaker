@@ -8,20 +8,6 @@
     element-loading-customClass="loading-overlay"
     @paste="onPaste"
   >
-    <div class="flex-horizontal">
-      <el-button
-        type="primary"
-        @click="previous"
-        :loading="processing"
-        :disabled="currentStep <= 0"
-      >{{$t('steps.button.previous')}}</el-button>
-      <el-button
-        type="primary"
-        @click="next"
-        :loading="processing"
-        :disabled="currentStep >= 2 || !this.image"
-      >{{$t('steps.button.next')}}</el-button>
-    </div>
     <!-- <transition name="editor-transition"> -->
     <!-- file chooser -->
     <div class="mememaker filepicker vertical-center" v-show="currentStep === 0" key="0">
@@ -52,6 +38,20 @@
       </div>
     </div>
     <!-- </transition> -->
+    <div class="flex-horizontal">
+      <el-button
+        type="primary"
+        @click="previous"
+        :loading="processing"
+        :disabled="currentStep <= 0"
+      >{{$t('steps.button.previous')}}</el-button>
+      <el-button
+        type="primary"
+        @click="next"
+        :loading="processing"
+        :disabled="currentStep >= 2 || !this.image"
+      >{{$t('steps.button.next')}}</el-button>
+    </div>
     <!-- eleme steps -->
     <el-steps class="step" :active="currentStep" finish-status="success" align-center>
       <el-step :title="$t('steps.step1')"></el-step>
@@ -150,9 +150,12 @@ export default class MemeMaker extends Vue {
 
 <style lang="scss" scoped>
 .maker {
-  flex-grow: 1;
+  & > * {
+    margin: 10px;
+  }
 
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   justify-content: space-around;
   overflow: hidden;
@@ -160,7 +163,6 @@ export default class MemeMaker extends Vue {
     flex-grow: 1;
     &.editor,
     &.result {
-      margin: 20px;
       & > * {
         margin: 10px;
       }

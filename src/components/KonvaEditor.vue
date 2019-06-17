@@ -1,5 +1,6 @@
 <template>
   <div class="wrapper">
+    <div>{{$t('editor.logotip')}}</div>
     <el-radio-group v-model="logo" @change="changeLogo">
       <el-radio border label="zh">中文</el-radio>
       <el-radio border label="en">English</el-radio>
@@ -152,7 +153,7 @@ export default class KonvaEditor extends Vue {
 <style lang="scss" scoped>
 .wrapper {
   & > * {
-    margin: 10px;
+    margin: 5px;
   }
   .content {
   }

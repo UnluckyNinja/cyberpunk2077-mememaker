@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <el-container style="min-height: 100vh">
-      <el-header class="header vertical-center">
-        <div>{{$t('app.title')}}</div>
+      <el-header height="auto" class="header vertical-center">
+        <h1>
+          <div>{{$t('app.title')}}</div>
+        </h1>
         <div class="language-radio">
           <el-radio-group v-model="locale" @change="changeLanguage">
             <el-radio-button label="en">English</el-radio-button>
@@ -14,7 +16,22 @@
         <MemeMaker></MemeMaker>
       </el-main>
       <el-footer class="footer vertical-center">
-        <div>{{$t('app.footer')}}</div>
+        <el-row type="flex">
+          <el-col class="vertical-center" :span="1">
+            <a
+              class="repo-link"
+              href="https://github.com/UnluckyNinja/cyberpunk2077-mememaker/"
+              target="_blank"
+            >
+              <img src="@/assets/GitHub-Mark-32px.png">
+            </a>
+          </el-col>
+          <el-col :span="22">
+            <h5>
+              <div>{{$t('app.footer')}}</div>
+            </h5>
+          </el-col>
+        </el-row>
       </el-footer>
     </el-container>
   </div>
@@ -66,16 +83,25 @@ export default class App extends Vue {
 
   .header,
   .footer {
-    line-height: 60px;
+    height: auto;
     .language-radio {
-      position: absolute;
+      align-self: flex-end;
+      position: relative;
       right: 20px;
     }
   }
   .header {
-    font-size: 30px;
+    & > * {
+      margin: 5px;
+    }
+    border-bottom: 1px;
+    justify-content: flex-start;
   }
   .footer {
+    border-top: 1px;
+    .repo-link {
+      
+    }
   }
   .main {
     @extend .flex-vertical;
