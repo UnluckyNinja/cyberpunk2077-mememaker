@@ -39,7 +39,8 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import MemeMaker from './components/MemeMaker.vue';
+
+const MemeMaker = () => import('./components/MemeMaker.vue');
 
 @Component({
   components: {
